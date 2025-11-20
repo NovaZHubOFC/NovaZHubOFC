@@ -25,14 +25,14 @@ WindUI:Popup({
 -- JANELA
 local Window = WindUI:CreateWindow({
     Title = "NovaZHub  |  WindUI",
-    Author = "by Carlos",
+    Author = "by NovaZHub",
     Folder = "NovaZHub",
     Icon = "sfsymbols:gamecontroller",
     IconSize = 50,
     HideSearchBar = true,
 
     OpenButton = {
-        Title = "Abrir NovaZHub",
+        Title = "Open NovaZHub🤑",
         CornerRadius = UDim.new(1,0),
         StrokeThickness = 2,
         Enabled = true,
