@@ -12,7 +12,6 @@ do
     end
 end
 
--- Pop-up inicial opcional
 WindUI:Popup({
     Title = "NovaZHub",
     Icon = "bird",
@@ -22,7 +21,6 @@ WindUI:Popup({
     }
 })
 
--- JANELA
 local Window = WindUI:CreateWindow({
     Title = "NovaZHub  | FpsFlick",
     Author = "by NovaZHub",
@@ -50,9 +48,21 @@ local CombatTab = Window:Tab({
     Icon = "sword"
 })
 
+-- HITBOX SLIDER
+local HitboxSize = 35
+
+CombatTab:Slider({
+    Title = "Hitbox Size",
+    Step = 1,
+    Value = { Min = 10, Max = 35, Default = 35 },
+    Callback = function(v)
+        HitboxSize = v
+    end
+})
+
 -- HITBOX EXTENDER
 CombatTab:Toggle({
-    Title = "Hitbox Extender 35x35x35 (Azul)",
+    Title = "Hitbox Extender Azul",
     Callback = function(state)
         _G.ExtendHitbox = state
         if state then
@@ -61,14 +71,14 @@ CombatTab:Toggle({
                     for _, v in ipairs(game:GetService("Players"):GetPlayers()) do
                         if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
                             local hrp = v.Character.HumanoidRootPart
-                            hrp.Size = Vector3.new(35,35,35)
+                            hrp.Size = Vector3.new(HitboxSize, HitboxSize, HitboxSize)
                             hrp.Transparency = 0.7
-                            hrp.Color = Color3.fromRGB(0,150,255)
                             hrp.Material = Enum.Material.Neon
+                            hrp.Color = Color3.fromRGB(0,150,255)
                             hrp.CanCollide = false
                         end
                     end
-                    task.wait(0.2)
+                    task.wait(0.15)
                 end
             end)
         else
@@ -82,15 +92,37 @@ CombatTab:Toggle({
     end
 })
 
--- WALKSPEED SLIDER
-CombatTab:Slider({
-    Title = "Walkspeed",
-    Step = 1,
-    Value = { Min = 16, Max = 70, Default = 16 },
-    Callback = function(v)
-        local char = game.Players.LocalPlayer.Character
-        if char and char:FindFirstChild("Humanoid") then
-            char.Humanoid.WalkSpeed = v
+-- ESP AZUL CONTORNO
+CombatTab:Toggle({
+    Title = "ESP Azul (Contorno)",
+    Callback = function(state)
+        _G.ESPOutline = state
+
+        if state then
+            task.spawn(function()
+                while _G.ESPOutline do
+                    for _, plr in pairs(game.Players:GetPlayers()) do
+                        if plr ~= game.Players.LocalPlayer and plr.Character then
+                            if not plr.Character:FindFirstChild("NovaZ_Outline") then
+                                local h = Instance.new("Highlight")
+                                h.Name = "NovaZ_Outline"
+                                h.FillTransparency = 1
+                                h.OutlineTransparency = 0
+                                h.OutlineColor = Color3.fromRGB(0, 150, 255)
+                                h.Adornee = plr.Character
+                                h.Parent = plr.Character
+                            end
+                        end
+                    end
+                    task.wait(0.25)
+                end
+            end)
+        else
+            for _, plr in pairs(game.Players:GetPlayers()) do
+                if plr.Character and plr.Character:FindFirstChild("NovaZ_Outline") then
+                    plr.Character.NovaZ_Outline:Destroy()
+                end
+            end
         end
     end
 })
@@ -126,15 +158,13 @@ local FPSTab = Window:Tab({
     Icon = "gauge"
 })
 
--- FPS BOOST
 FPSTab:Button({
     Title = "FPS Boost",
     Color = Color3.fromHex("#00ff00"),
     Callback = function()
         for _, v in pairs(game:GetDescendants()) do
             if v:IsA("BasePart") then v.Material = Enum.Material.SmoothPlastic end
-            if v:IsA("Decal") then v.Transparency = 1 end
-            if v:IsA("Texture") then v.Transparency = 1 end
+            if v:IsA("Decal") or v:IsA("Texture") then v.Transparency = 1 end
         end
         setfpscap(240)
     end
@@ -157,5 +187,22 @@ MiscTab:Button({
     Color = Color3.fromHex("#305dff"),
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+    end
+})
+
+-----------------------------------------------------
+-- //////////////////// TAB UPDATE ///////////////////
+-----------------------------------------------------
+
+local UpdateTab = Window:Tab({
+    Title = "Update",
+    Icon = "Update"
+})
+
+UpdateTab:Button({
+    Title = "shows update ",
+    Icon = "doc.text",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/NovaZHubOFC/NovaZHubOFC/refs/heads/main/info.lua"))()
     end
 })
