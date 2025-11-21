@@ -24,7 +24,7 @@ WindUI:Popup({
 
 -- JANELA
 local Window = WindUI:CreateWindow({
-    Title = "NovaZHub  |  WindUI",
+    Title = "NovaZHub  | FpsFlick",
     Author = "by NovaZHub",
     Folder = "NovaZHub",
     Icon = "sfsymbols:gamecontroller",
