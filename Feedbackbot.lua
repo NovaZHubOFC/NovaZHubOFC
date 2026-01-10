@@ -73,7 +73,7 @@ end
 local send = Instance.new("TextButton", frame)
 send.Size = UDim2.fromScale(0.4, 0.16)
 send.Position = UDim2.fromScale(0.3, 0.82)
-send.Text = "Enviar"
+send.Text = "send"
 send.BackgroundColor3 = Color3.fromRGB(60,120,255)
 send.TextColor3 = Color3.fromRGB(255,255,255)
 send.Font = Enum.Font.GothamBold
