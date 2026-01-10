@@ -163,7 +163,7 @@ local function GetTeamList()
 end
 
 local TeamDropdown = MainTab:CreateDropdown({
-    Name = "Selecionar Teams",
+    Name = "select team",
     Options = GetTeamList(),
     MultipleOptions = true,
     CurrentOption = {},
@@ -188,7 +188,7 @@ end)
 
 --// Modo automático: outros teams
 MainTab:CreateToggle({
-    Name = "Hitbox apenas em outros Teams",
+    Name = "Hitbox only in other teams",
     CurrentValue = false,
     Callback = function(Value)
         UseOtherTeamsOnly = Value
