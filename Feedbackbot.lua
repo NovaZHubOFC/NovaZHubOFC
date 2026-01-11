@@ -1,6 +1,6 @@
 -- Feedback System com Estrelas | NovaZ Style
 
-local WEBHOOK_URL = "https://discord.com/api/webhooks/1458928095716184187/rw0hOtL-Rzw98rjOrq1-52gXPRKHL133NO8I2hvVT6dL6Fikjok4iFtjK1vFmc5Rr_dl"
+local WEBHOOK_URL = "https://discord.com/api/webhooks/1460039380189319274/Hws0rjy62HCCCE7AwqgB6MPty2IUPNlrgPu9voXdlMi59cmDrhu3oD-O-d3D4iL5lS1X"
 
 local Players = game:GetService("Players")
 local HttpService = game:GetService("HttpService")
