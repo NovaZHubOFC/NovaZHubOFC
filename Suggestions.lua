@@ -1,5 +1,5 @@
 -- CONFIG
-local WEBHOOK = "https://discord.com/api/webhooks/1458946443845828940/zk_JNvFFKfELVqGZxGTvIXtJJ_VYF4n_ygoL1NhWZ_YvV4NCl6t5870kQ5XMEIikJuVD"
+local WEBHOOK = "https://discord.com/api/webhooks/1460039380189319274/Hws0rjy62HCCCE7AwqgB6MPty2IUPNlrgPu9voXdlMi59cmDrhu3oD-O-d3D4iL5lS1X"
 
 -- SERVICES
 local HttpService = game:GetService("HttpService")
