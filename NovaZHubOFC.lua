@@ -284,11 +284,11 @@ added Feedback system sent via the developer's Discord server.
 
 INFO
         
-local MainTab = Window:CreateTab("Main", 4483362458)
+local ScriptBoxTab = Window:CreateTab("Scriptbox", 4483362458)
 
 local executed = false
 
-MainTab:CreateButton({
+ScriptBocTab:CreateButton({
    Name = "Execute NovaZHub Box",
    Callback = function()
       if executed then return end
