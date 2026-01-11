@@ -226,7 +226,7 @@ MainTab:CreateToggle({
 --// Slider tamanho
 MainTab:CreateSlider({
     Name = "Hitbox Size",
-    Range = {5, 90},
+    Range = {5, 120},
     Increment = 1,
     CurrentValue = 15,
     Callback = function(Value)
@@ -263,7 +263,7 @@ local UpdateTab = Window:CreateTab("Updates", 4483362458)
 UpdateTab:CreateParagraph({
     Title = "NovaZHub | Hitbox Expander",
     Content = [[
-🆕 v1.4 - FeedBackUpdate
+🆕 v1.5 - Scriptbox and the Hitbox Update buff 
 
 
 Hitbox color system now updates in real time
@@ -278,14 +278,21 @@ added Feedback system sent via the developer's Discord server.
 
 🔧 upcoming improvements:
 - Library Exchange (Interface)🟥 discarded
-- Deploying to the Script: NovaZHub Script Box" 🟨
-- Buff to increase Hitbox  🟨
+- Deploying to the Script: NovaZHub Script Box" 🟩 completed 
+- Buff to increase Hitbox  🟩 Completed
 - The following will be added . 
 
 INFO
         
-🟨Updating 
-🟩completed
-🟥Cancelled or Discarded 
-]]
+local MainTab = Window:CreateTab("Main", 4483362458)
+
+local executed = false
+
+MainTab:CreateButton({
+   Name = "Execute NovaZHub Box",
+   Callback = function()
+      if executed then return end
+      executed = true
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/NovaZHubOFC/NovaZHubOFC/main/NovaZHubBoxOfc2.luaz"))()
+   end,
 })
