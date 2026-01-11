@@ -273,12 +273,13 @@ Hitbox color system now updates in real time
 • Bug fix when disabling Hitbox on players inside vehicles
 • Loop optimization (less resource consumption)
 • More reliable enemy detection• More reliable enemy detection 
-added Feedback system sent via the developer's Discord server. 
+added Feedback system sent via the developer's Discord server.
+• Fixed Suggestion system that wasn't sending suggestions through the developer's Discord server.     
 
 🔧 upcoming improvements:
-- Library Exchange (Interface)
-- Deploying to the Script: NovaZHub Script Box" 
-- Buff to increase Hitbox  
+- Library Exchange (Interface)🟨
+- Deploying to the Script: NovaZHub Script Box" 🟨
+- Buff to increase Hitbox  🟨
 - Update begins on January 11, 2026.
 - Update date: January 13, 2026.
 - Suggestion system via the developer's Discord server. 
