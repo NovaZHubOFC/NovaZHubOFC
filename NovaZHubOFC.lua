@@ -281,8 +281,6 @@ added Feedback system sent via the developer's Discord server.
 - Deploying to the Script: NovaZHub Script Box" 🟩 completed 
 - Buff to increase Hitbox  🟩 Completed
 - The following will be added . 
-
-INFO
         
 local ScriptBoxTab = Window:CreateTab("Scriptbox", 4483362458)
 
