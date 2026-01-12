@@ -265,28 +265,28 @@ UpdateTab:CreateParagraph({
     Content = [[
 🆕 v1.5 - Scriptbox and the Hitbox Update buff 
 
-
 Hitbox color system now updates in real time
 • Bug fix when disabling Hitbox on players inside vehicles
 • Loop optimization (less resource consumption)
-Hitbox color system now updates in real time
-• Bug fix when disabling Hitbox on players inside vehicles
-• Loop optimization (less resource consumption)
-• More reliable enemy detection• More reliable enemy detection 
-added Feedback system sent via the developer's Discord server.
+• More reliable enemy detection
+• Added Feedback system sent via the developer's Discord server.
 • Fixed Suggestion system that wasn't sending suggestions through the developer's Discord server.     
 
 🔧 upcoming improvements:
-- Library Exchange (Interface)🟥 discarded
-- Deploying to the Script: NovaZHub Script Box" 🟩 completed 
-- Buff to increase Hitbox  🟩 Completed
-- The following will be added . 
-        
+- Library Exchange (Interface) 🟥 discarded
+- Deploying to the Script: NovaZHub Script Box 🟩 completed 
+- Buff to increase Hitbox 🟩 Completed
+- The following will be added
+]]
+})
+
+-- Agora fora do Paragraph:
+
 local ScriptBoxTab = Window:CreateTab("Scriptbox", 4483362458)
 
 local executed = false
 
-ScriptBocTab:CreateButton({
+ScriptBoxTab:CreateButton({
    Name = "Execute NovaZHub Box",
    Callback = function()
       if executed then return end
