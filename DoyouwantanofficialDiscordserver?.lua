@@ -41,7 +41,7 @@ button.Parent = frame
 local bcorner = Instance.new("UICorner", button)
 bcorner.CornerRadius = UDim.new(0, 8)
 
-local link = "https://discord.gg/s9kRXQ5x"
+local link = "https://discord.gg/n7auYDqj"
 
 button.MouseButton1Click:Connect(function()
 	if setclipboard then
