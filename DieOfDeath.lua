@@ -10,7 +10,7 @@ local OrionLib = loadstring(game:HttpGet(
 ))()
 
 local Window = OrionLib:MakeWindow({
-    Name = "Die of Death | NovaZ",
+    Name = "Die of Death | NovaZ 1.0",
     HidePremium = false,
     SaveConfig = true,
     ConfigFolder = "DieOfDeathOrion"
